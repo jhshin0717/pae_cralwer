@@ -47,12 +47,3 @@ for post in posts:
           + '[' + str(post_num_comment) + ']' + ' ' + post_time + ' ' + 'read: ' + str(post_read))
 
 driver.close()
-
-# TIME
-# main-area > div:nth-child(7) > form > table > tbody > tr:nth-child(1) > td:nth-child(4)
-# driver.switch_to_frame('cafe_main')
-
-#main-area > div.prev-next > table > tbody > tr > td.on > a
-
-#main-area > div.prev-next > table
-#main-area > div.prev-next > table > tbody > tr > td.on > a
