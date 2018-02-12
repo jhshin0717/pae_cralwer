@@ -1,8 +1,6 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup as bs
 import pandas as pd
-# TODO: Headless Crawling
-# https://beomi.github.io/2017/09/28/HowToMakeWebCrawler-Headless-Chrome/
 
 # TODO: Path should be coming from outside.
 driver = webdriver.Chrome('C:\chromedriver\chromedriver.exe')
