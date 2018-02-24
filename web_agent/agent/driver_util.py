@@ -17,7 +17,7 @@ class Driver:
 
     def __load(self, driver_type, driver_path):
         # return DRIVER_LIST[driver_type](driver_path)
-        return get_chrome_driver(driver_path)
+        return get_chrome_headless_driver(driver_path)
 
     @classmethod
     def close(cls):
@@ -39,6 +39,17 @@ def get_chrome_driver(driver_path):
     return driver
 
 
+def get_chrome_headless_driver(driver_path):
+    options = webdriver.ChromeOptions()
+    options.add_argument('headless')
+    options.add_argument('window-size=1920x1080')
+    options.add_argument("disable-gpu")
+    driver = webdriver.Chrome(driver_path, chrome_options=options)
+    driver.implicitly_wait(3)
+    return driver
+
+
 DRIVER_LIST = {
-    "Chrome": get_chrome_driver
+    "Chrome": get_chrome_driver,
+    "Chrome_Headless": get_chrome_headless_driver
 }
