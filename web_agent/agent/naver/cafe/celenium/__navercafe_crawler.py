@@ -16,6 +16,7 @@ driver.find_element_by_css_selector('#frmNIDLogin > fieldset > input').click()
 page_addr = 'http://cafe.naver.com/ArticleList.nhn?search.clubid=11262350&userDisplay=50&search.boardtype=L&search.specialmenutype=&search.questionTab=A&search.totalCount=501&search.page=1'
 driver.get(page_addr)
 iframe_element = driver.find_element_by_css_selector('#cafe_main')
+
 driver.switch_to_frame(iframe_element)
 html = driver.page_source
 soup = bs(html, 'html.parser')
