@@ -19,9 +19,18 @@ class Driver:
         # return DRIVER_LIST[driver_type](driver_path)
         return get_chrome_driver(driver_path)
 
+    @classmethod
+    def close(cls):
+        if cls.__instance is not None:
+            cls.__instance.web_driver.close()
+
 
 def get_driver():
     return Driver.instance()
+
+
+def close_driver():
+    return Driver.close()
 
 
 def get_chrome_driver(driver_path):
